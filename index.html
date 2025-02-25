@@ -1,0 +1,125 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grindset</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px;
+            background: rgba(43, 0, 255, 0.5);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;  /* Add space between logo image and text */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            color: black;
+            padding: 50px;
+            background: url('C:\Users\CarlVincent\Downloads\marvel rivals.jpg') no-repeat center center/cover;
+        }
+        .hero-content {
+            max-width: 600px;
+            margin-left: 50px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 18px;
+            color: gray;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn-primary {
+            background: #2d69ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 60px;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            color: black;
+        }
+        .hero-image {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="C:\Users\CarlVincent\Downloads\logo.png" alt="Logo">
+            <div class="logo">The Maximum Grindset</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="C:\Users\CarlVincent\Downloads\Image 3.png" alt="Home"></a></li>
+                <li><a href="#"><img src="C:\Users\CarlVincent\Downloads\Image 4.png" alt="About"></a></li>
+                <li><a href="#"><img src="C:\Users\CarlVincent\Downloads\Image 5.png" alt="Projects"></a></li>
+                <li><a href="#"><img src="C:\Users\CarlVincent\Downloads\Image 6.png" alt="Contact"></a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-primary">Hire Me</a>
+    </header>
+    
+    <section class="hero">
+        <img src="C:\Users\CarlVincent\Downloads\mewing.jpg" alt="Profile Image" class="hero-image">
+        <div class="hero-content">
+            <h1>Explore My Mewing Streak</h1>
+            <p>Skibidi Ohio Sigma Rizz Gyatt</p>
+            <div class="buttons">
+                <a href="#" class="btn-primary">Explore</a>
+                <a href="#" class="btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
