@@ -1,31 +1,29 @@
 @media screen and (max-width: 425px) {
-  header {
+header {
     padding: 10px 15px;
   }
 
 .hero {
-    flex-direction: column;
-    text-align: center;
+    width: 100%;
     padding: 50px 20px;
+    box-sizing: border-box;
+    overflow: hidden; 
   }
 
-  .hero .profile {
+.hero .profile {
     width: 180px;
     height: 180px;
   }
 
-  .hero .content {
-    max-width: 100%;
+.hero .content {
     text-align: center;
     margin: 0 auto;
+    width: 100%;
   }
 
- .hero .content h1 {
+  .hero .content h1, .hero .content p {
     font-size: 2rem;
-  }
-
-  .hero .content p {
-    font-size: 1.5rem;
+    word-wrap: break-word;
   }
 
   .hero .content .buttons {
@@ -38,6 +36,11 @@
     font-size: 0.9rem;
     padding: 10px 20px;
     width: 130px;
+  }
+
+    .navbar {
+    width: 100%;
+    padding: 10px 20px;
   }
 
   footer {
