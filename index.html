@@ -346,28 +346,21 @@
 <div id="popup" class="popup">Coming soon...</div>
 
 <script>
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('nav').classList.toggle('show-menu');
-  });
-</script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav');
-
-  
-  menuToggle.addEventListener('click', function() {
-    nav.classList.toggle('show-menu');
+  menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
   });
 
-  
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-      nav.classList.remove('show-menu');
+  document.addEventListener("click", function (event) {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove("active");
     }
   });
+});
 </script>
-
 
 </body>
 </html>
