@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  
   <title>FLORES</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="tablet.css" media="screen and (max-width: 1024px)">
   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 425px)">
+
 
   <style>
     * {
@@ -44,55 +46,88 @@
       z-index: 1000;
     }
 
+    header .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 2rem;
+      color: #333;
+    }
     .menu-toggle {
-      display: none; 
+  display: none; 
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    text-align: center;
+  }
+
+  .show-menu {
+    display: flex;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+    header .logo img, .footer-logo {
+  height: 60px;
+  width: 60px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  animation: pulse 1.5s infinite ease-in-out;
+  margin-right: 20px;
+}
+
+    header nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2rem;
+      padding: 10px 15px;
+      transition: all 0.3s;
     }
 
-    @media screen and (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        text-align: center;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-links.show-menu {
-        display: flex;
-      }
+    header nav a:hover {
+      color: #007BFF;
     }
 
     .hero {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 120px 20px;
+      justify-content: space-between;
+      padding: 100px 40px;
+      margin-top: 80px;
+      flex: 1;
     }
 
     .hero .profile {
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       overflow: hidden;
       border: 5px solid white;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); 
+      justify-content: center;
+      align-items: center;
     }
 
     .hero .profile img {
@@ -101,33 +136,83 @@
       object-fit: cover;
     }
 
+    .hero .content {
+      max-width: 600px;
+    }
+
     .hero .content h1 {
-      font-size: 2.5rem;
+      font-size: 4rem;
       margin-bottom: 10px;
     }
 
     .hero .content p {
-      font-size: 1.2rem;
+      font-size: 3rem;
       margin-bottom: 20px;
       color: #ffffff;
     }
 
+    .hero .content .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .hero .content .buttons a {
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+      display: inline-block;
+      width: 170px;
+    }
+
+    .hero .content .buttons .resume,
+    .hero .content .buttons .contact {
+      border: 2px solid #ffffff;
+      text-align: center;
+    }
+
+    .hero .content .buttons .resume {
+      background-color: #ffffff;
+      color: #007BFF;
+    }
+
+    .hero .content .buttons .resume:hover {
+      background-color: #0056b3;
+      color: white;
+      border-color: #ffffff;
+    }
+
+    .hero .content .buttons .contact {
+      background-color: white;
+      color: #007BFF;
+    }
+
+    .hero .content .buttons .contact:hover {
+      background-color: #0056b3;
+      color: white;
+      border-color: #ffffff;
+    }
+
     .about {
-      padding: 100px 20px;
+      padding: 120px 40px;
       text-align: center;
       background-image: url("images/snowy night.jpg");
       background-size: cover;
       background-position: center;
       color: white;
+      flex: 1;
     }
 
     .about h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 20px;
     }
 
     .about p {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       max-width: 800px;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.5);
@@ -139,9 +224,46 @@
       background: #f1f1f1;
       text-align: center;
       padding: 20px;
+      position: relative;
+      bottom: 0;
       width: 100%;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
       margin-top: auto;
     }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo {
+      height: 40px;
+      margin-bottom: 5px;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    footer p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+   
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  display: none; 
+  z-index: 2000;
+}
+
+
   </style>
 </head>
 <body>
@@ -155,10 +277,10 @@
     <button class="menu-toggle" id="menu-toggle">☰</button>
     <nav class="nav-links" id="nav-links">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -170,6 +292,10 @@
     <div class="content">
       <h1>Explore My Portfolio</h1>
       <p>Discover My Expertise as a Full-Stack Developer</p>
+      <div class="buttons">
+        <a href="#resume" class="resume">Resume</a>
+        <a href="#contact" class="contact contact-link">Contact</a>
+      </div>
     </div>
   </section>
 
@@ -177,7 +303,7 @@
     <h2>About Me</h2>
     <p>
       I'm a 3rd year IT student focused on learning about computer systems, programming, networking, and software development with a huge interest
-      in game development. I have spent years refining my knowledge regarding programming and modelling for games and would like to show them off
+        in game development. I have spent years refining my knowledge regarding programming and modelling for games and would like to show them off
       to the world.
     </p>
   </section>
@@ -193,21 +319,48 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-
-      menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("show-menu");
-      });
-
-      document.addEventListener("click", function (event) {
-        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-          navLinks.classList.remove("show-menu");
-        }
+    
+    document.querySelectorAll('.contact-link').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
       });
     });
+  
+    
+    document.getElementById("projects-btn").addEventListener("click", function(event) {
+      event.preventDefault(); 
+  
+      let popup = document.getElementById("popup");
+      popup.style.display = "block"; 
+  
+      setTimeout(() => {
+        popup.style.display = "none"; 
+      }, 2000);
+    });
   </script>
+  
+  
+
+
+<div id="popup" class="popup">Coming soon...</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
