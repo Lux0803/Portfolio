@@ -15,15 +15,18 @@
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
+  .hero .profile {
+    width: 200px !important;
+    height: 200px !important;
 
   .hero .content h1 {
-    font-size: 2rem; 
+    font-size: 2rem !important; 
   }
 
   .hero .content p {
-    font-size: 1.2rem; 
+    font-size: 1.2rem !important; 
   }
 
   .menu-toggle {
