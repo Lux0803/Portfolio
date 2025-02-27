@@ -32,6 +32,13 @@ header .logo {
   color: #333;
 }
 
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+
 header nav a {
   margin: 0 8px;
   text-decoration: none;
