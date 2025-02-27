@@ -1,3 +1,46 @@
+@media screen and (max-width: 320px) {
+  .hero {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hero .profile img {
+    width: 90px; 
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px; 
+  }
+
+  .hero .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .hero .buttons a {
+    width: 100%;
+    max-width: 250px; 
+    font-size: 0.9rem;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+  }
+}
+
 @media screen and (max-width: 426px) {
   header {
     height: auto !important;
