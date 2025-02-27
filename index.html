@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="tablet.css" media="screen and (max-width: 1024px)">
   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 425px)">
 
-
   <style>
     * {
       margin: 0;
@@ -32,6 +31,7 @@
       min-height: 100vh;
     }
 
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -44,90 +44,95 @@
       top: 0;
       left: 0;
       z-index: 1000;
+      position: relative;
     }
 
-    header .logo {
+    .logo {
       display: flex;
       align-items: center;
       font-weight: bold;
       font-size: 2rem;
       color: #333;
     }
-    .menu-toggle {
-  display: none; 
-}
 
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: white;
-    text-align: center;
-  }
-
-  .show-menu {
-    display: flex;
-  }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-    header .logo img, .footer-logo {
-  height: 60px;
-  width: 60px; 
-  border-radius: 50%; 
-  object-fit: cover; 
-  animation: pulse 1.5s infinite ease-in-out;
-  margin-right: 20px;
-}
-
-    header nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-size: 1.2rem;
-      padding: 10px 15px;
-      transition: all 0.3s;
+    .logo img {
+      height: 60px;
+      width: 60px; 
+      border-radius: 50%;
+      object-fit: cover;
+      animation: pulse 1.5s infinite ease-in-out;
+      margin-right: 20px;
     }
 
-    header nav a:hover {
-      color: #007BFF;
+    /* Navigation */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex !important;
+      }
+
+      .nav-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-links li {
+        padding: 15px 0;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #333;
+      }
     }
 
     .hero {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 100px 40px;
       margin-top: 80px;
-      flex: 1;
+      flex-direction: column;
+      text-align: center;
     }
 
     .hero .profile {
-      width: 300px;
-      height: 300px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       overflow: hidden;
       border: 5px solid white;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); 
-      justify-content: center;
-      align-items: center;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
     }
 
     .hero .profile img {
@@ -137,109 +142,44 @@
     }
 
     .hero .content {
-      max-width: 600px;
+      max-width: 500px;
     }
 
     .hero .content h1 {
-      font-size: 4rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
     }
 
     .hero .content p {
-      font-size: 3rem;
+      font-size: 1.2rem;
       margin-bottom: 20px;
-      color: #ffffff;
     }
 
     .hero .content .buttons {
       display: flex;
+      flex-direction: column;
       gap: 10px;
     }
 
     .hero .content .buttons a {
       text-decoration: none;
-      padding: 15px 40px;
+      padding: 10px 20px;
       border-radius: 5px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      transition: all 0.3s ease-in-out;
+      font-size: 1rem;
       text-align: center;
-      display: inline-block;
-      width: 170px;
-    }
-
-    .hero .content .buttons .resume,
-    .hero .content .buttons .contact {
-      border: 2px solid #ffffff;
-      text-align: center;
-    }
-
-    .hero .content .buttons .resume {
-      background-color: #ffffff;
-      color: #007BFF;
-    }
-
-    .hero .content .buttons .resume:hover {
-      background-color: #0056b3;
-      color: white;
-      border-color: #ffffff;
-    }
-
-    .hero .content .buttons .contact {
-      background-color: white;
-      color: #007BFF;
-    }
-
-    .hero .content .buttons .contact:hover {
-      background-color: #0056b3;
-      color: white;
-      border-color: #ffffff;
-    }
-
-    .about {
-      padding: 120px 40px;
-      text-align: center;
-      background-image: url("images/snowy night.jpg");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      flex: 1;
-    }
-
-    .about h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      font-size: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 10px;
     }
 
     footer {
       background: #f1f1f1;
       text-align: center;
       padding: 20px;
-      position: relative;
-      bottom: 0;
       width: 100%;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
       margin-top: auto;
     }
 
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     .footer-logo {
       height: 40px;
-      margin-bottom: 5px;
       animation: pulse 1.5s infinite ease-in-out;
     }
 
@@ -247,23 +187,6 @@
       font-size: 1rem;
       color: #333;
     }
-
-   
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 15px 30px;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  display: none; 
-  z-index: 2000;
-}
-
-
   </style>
 </head>
 <body>
@@ -273,14 +196,13 @@
       <img src="images/logo.png" alt="Logo">
       Carl Vincent Flores
     </div>
-  
     <button class="menu-toggle" id="menu-toggle">☰</button>
     <nav class="nav-links" id="nav-links">
       <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -292,75 +214,29 @@
     <div class="content">
       <h1>Explore My Portfolio</h1>
       <p>Discover My Expertise as a Full-Stack Developer</p>
-      <div class="buttons">
-        <a href="#resume" class="resume">Resume</a>
-        <a href="#contact" class="contact contact-link">Contact</a>
-      </div>
     </div>
-  </section>
-
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a 3rd year IT student focused on learning about computer systems, programming, networking, and software development with a huge interest
-        in game development. I have spent years refining my knowledge regarding programming and modelling for games and would like to show them off
-      to the world.
-    </p>
   </section>
 
   <footer id="contact">
-    <div class="footer-content">
-      <img src="images/logo.png" alt="Logo" class="footer-logo">
-      <p>CARL FLORES</p>
-      <p>Contact information</p>
-      <p>Mobile No.: +63 966 386 9652</p>
-      <p>Email: carlflores0803@gmail.com</p>
-    </div>
+    <p>Contact me at: carlflores0803@gmail.com</p>
   </footer>
 
   <script>
-    
-    document.querySelectorAll('.contact-link').forEach(button => {
-      button.addEventListener('click', function(event) {
-        event.preventDefault();
-        document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+
+      navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("active");
+        });
       });
     });
-  
-    
-    document.getElementById("projects-btn").addEventListener("click", function(event) {
-      event.preventDefault(); 
-  
-      let popup = document.getElementById("popup");
-      popup.style.display = "block"; 
-  
-      setTimeout(() => {
-        popup.style.display = "none"; 
-      }, 2000);
-    });
   </script>
-  
-  
-
-
-<div id="popup" class="popup">Coming soon...</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-
-  menuToggle.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-  });
-
-  document.addEventListener("click", function (event) {
-    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-      navLinks.classList.remove("active");
-    }
-  });
-});
-</script>
 
 </body>
 </html>
