@@ -1,4 +1,11 @@
 @media screen and (max-width: 1024px) {
+
+  .hero .content h1,
+  .hero .content p,
+  .hero .content .buttons {
+    margin-left: 0 !important;
+  }
+  
   .hero {
     flex-direction: column;
     text-align: center;
