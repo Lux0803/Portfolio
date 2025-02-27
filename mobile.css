@@ -18,6 +18,14 @@
     font-size: 1.2rem;
   }
 
+  .hero .content h1 {
+    font-size: 2rem; 
+  }
+
+  .hero .content p {
+    font-size: 1.2rem; 
+  }
+
   .menu-toggle {
     display: block !important;
     background: none;
