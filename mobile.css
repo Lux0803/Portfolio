@@ -65,4 +65,19 @@
     font-size: 18px;
     color: #333;
   }
+    .about {
+    text-align: center; 
+    padding: 80px 20px; 
+  }
+
+  .about h2 {
+    font-size: 1.8rem;  
+    margin-bottom: 15px;
+  }
+
+  .about p {
+    font-size: 1rem; 
+    max-width: 90%;  
+    margin: 0 auto;  
+  }
 }
