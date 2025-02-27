@@ -1,5 +1,4 @@
 @media screen and (max-width: 1024px) {
-
   .hero .content h1,
   .hero .content p,
   .hero .content .buttons {
@@ -11,7 +10,7 @@
     text-align: center;
     padding: 80px 30px;
   }
-  
+
   .hero .profile {
     width: 220px;
     height: 220px;
@@ -45,5 +44,28 @@
 
   .about p {
     font-size: 1.2rem;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .menu-toggle {
+    display: none; 
   }
 }
