@@ -51,7 +51,6 @@ header nav a:hover {
 
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 100px 40px;
   margin-top: 80px;
