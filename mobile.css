@@ -30,7 +30,7 @@
   }
 
   .nav-links {
-    display: flex;
+    display: none;
     position: absolute;
     justify-content: center;
     top: 60px;
