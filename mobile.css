@@ -20,6 +20,7 @@
   .hero .profile {
     width: 200px !important;
     height: 200px !important;
+  }  
 
   .hero .content h1 {
     font-size: 2rem !important; 
@@ -57,12 +58,17 @@
 
   .nav-links.show-menu {
     display: flex !important;
+    flex-direction: column !important;
   }
 
   .nav-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .nav-links li {
